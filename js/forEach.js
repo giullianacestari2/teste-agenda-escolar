@@ -3,7 +3,7 @@ let listaJSON = [
     {
       "titulo": "Tarefa 1",
       "descricao": "Descrição da tarefa 1",
-      "dataDeConclusao": "2023-11-10",
+      "dataDeConclusao": "2023-09-10",
       "disciplina": "matematica",
       "feito": false,
       "progresso": ""
@@ -11,15 +11,15 @@ let listaJSON = [
     {
       "titulo": "Tarefa 2",
       "descricao": "Descrição da tarefa 2",
-      "dataDeConclusao": "2023-11-15",
+      "dataDeConclusao": "2020-01-15",
       "disciplina": "portugues",
       "feito": true,
-      "progresso": "Em andamento"
+      "progresso": ""
     },
     {
       "titulo": "Tarefa 3",
       "descricao": "Descrição da tarefa 3",
-      "dataDeConclusao": "2023-11-20",
+      "dataDeConclusao": "2023-05-20",
       "disciplina": "quimica",
       "feito": false,
       "progresso": ""
