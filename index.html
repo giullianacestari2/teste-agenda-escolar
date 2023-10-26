@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu planner de estudos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="container div-titulo">
+        <h1 class="titulo">Meu planner de estudos</h1>
+        <button class="botao exibir" id="exibirValores">Mostrar atividades</button>
+        <button class="botao filtrar" id="">Filtrar por disciplina</button>
+        <button class="botao ordenar" id="btn-ordenar">Ordenar por prioridade</button> 
+        </div>
+  </header>
+  
+  <section class="container secao-nova-tarefa">
+    <form id="meuFormulario form-adiciona">
+      <h2 class="titulo-form" id="titulo-form">Adicionar nova tarefa</h2>
+
+      <div class="grupo">
+        <label for="disciplina">Disciplina:</label>
+        <select id="disciplina">
+          <option value="matematica">Matemática</option>
+          <option value="portugues">Português</option>
+          <option value="quimica">Química</option>
+        </select>
+        <br>
+      </div>
+
+      <div class="grupo">
+        <label for="descricao">Tarefa:</label>
+        <textarea id="descricao" required></textarea>
+        <br>
+      </div>
+
+      <div class="grupo">
+        <label for="dataDeConclusao">Prazo:</label>
+        <input type="date" id="dataDeConclusao" required>
+      </div>
+
+      <button type="button" onclick="adicionarRequisicao()">Enviar</button>
+      </form>
+  </section>
+
+  
+
+  <h2>Filtrar por Disciplina</h2>
+  <button type="button" id="filtroBotao" onclick="toggleFiltroMenu()">FILTRAR</button>
+  <select id="filtroMenu" onchange="filtrarRequisicoes()">
+    <option value="todas">Todas</option>
+    <option value="matematica">Matemática</option>
+    <option value="portugues">Português</option>
+    <option value="quimica">Química</option>
+  </select>
+
+  <button type="button" id="totalBotao" onclick="exibirTotal()">TOTAL</button>
+  <p id="totalResultado" style="display:none">Você tem um total de  <span id="totalValor"></span> tarefas para fazer</p>
+
+  <button type="button" onclick="ordenarPorData()">ORDENAR</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Disciplina</th>
+        <th>Tarefa</th>
+        <th>Prazo</th>
+        <th>Feito</th>
+        <th>Progresso</th>
+      </tr>
+    </thead>
+    <tbody id="tabelaRequisicoes"></tbody>
+  </table>
+
+<script src="js/adicionar.js"></script>
+<script src="js/filter.js"></script>
+<script src="js/forEach.js"></script>
+<script src="js/localStorage.js"></script>
+<script src="js/reduce.js"></script>
+<script src="js/sort.js"></script>
+</body>
+</html>
