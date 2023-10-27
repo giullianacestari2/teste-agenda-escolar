@@ -1,4 +1,4 @@
-// Função para carregar os dados da lista a partir do Local Storage
+
 function carregarDadosDoLocalStorage() {
     const dadosLocalStorage = localStorage.getItem('listaJSON');
     if (dadosLocalStorage) {
@@ -11,9 +11,8 @@ function carregarDadosDoLocalStorage() {
   function salvarDadosNoLocalStorage() {
     localStorage.setItem('listaJSON', JSON.stringify(listaJSON));
   }
+// Removido variavel let listaJSON = []; ja tinha sido instanciado outras vezes
 
-  // Lista JSON existente
-  let listaJSON = [];
-
-  // Carregar dados do Local Storage, se existirem
-  carregarDadosDoLocalStorage();
+// Estas funcoes estao na pagina forEach,
+// depois voce organiza o código da maneira que achar melhor
+// removido   carregarDadosDoLocalStorage();
