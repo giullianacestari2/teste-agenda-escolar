@@ -74,17 +74,5 @@ function atualizarListaRequisicoes() {
 }
 
 
-/* VOLTAR AQUI
-const checkbox = document.querySelector("#checkbox")
-
-  for (i=0; i < checkbox.length;i++){
-    checkbox[i].onclick = atualizarListaRequisicoes; 
-  }
-*/
-
-
-
-
-
-    // Inicializa a lista de requisições na tabela da interface
-    atualizarListaRequisicoes();
+// Inicializa a lista de requisições na tabela da interface
+atualizarListaRequisicoes();
