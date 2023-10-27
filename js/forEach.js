@@ -1,30 +1,35 @@
 // Lista JSON existente
 let listaJSON = [
-  {
-    "titulo": "Tarefa 1",
+  { "disciplina": "matematica",
     "descricao": "Descrição da tarefa 1",
     "dataDeConclusao": "2023-09-10",
-    "disciplina": "matematica",
     "feito": "",
     "progresso": ""
   },
   {
-    "titulo": "Tarefa 2",
-    "descricao": "Descrição da tarefa 2",
-    "dataDeConclusao": "2020-01-15",
-    "disciplina": "portugues",
+    "disciplina": "português",
+    "descricao": "Descrição da tarefa 1",
+    "dataDeConclusao": "2023-09-10",
     "feito": "",
     "progresso": ""
   },
   {
-    "titulo": "Tarefa 3",
-    "descricao": "Descrição da tarefa 3",
-    "dataDeConclusao": "2023-05-20",
     "disciplina": "quimica",
+    "descricao": "Descrição da tarefa 1",
+    "dataDeConclusao": "2023-09-10",
     "feito": "",
     "progresso": ""
   }
 ];
+
+// Função para formatar a data no formato "dd/mm/aa"
+function formatarData(data) {
+  const dataObj = new Date(data);
+  const dia = dataObj.getDate().toString().padStart(2, '0');
+  const mes = (dataObj.getMonth() + 1).toString().padStart(2, '0'); // Note que janeiro é 0, então adicionamos 1
+  const ano = dataObj.getFullYear().toString().slice(-2); // Pegue os últimos dois dígitos do ano
+  return `${dia}/${mes}/${ano}`;
+}
 
 
 // Função para atualizar a lista de requisições na tabela da interface
@@ -41,10 +46,9 @@ function atualizarListaRequisicoes() {
     const cell3 = row.insertCell(2);
     const cell4 = row.insertCell(3);
     const cell5 = row.insertCell(4); // Coluna "Feito"
-    const cell6 = row.insertCell(5); // Coluna "Progresso"
     cell1.innerHTML = requisicao.disciplina;
     cell2.innerHTML = requisicao.descricao;
-    cell3.innerHTML = requisicao.dataDeConclusao;
+    cell3.innerHTML = formatarData(requisicao.dataDeConclusao); 
     //cell4.innerHTML = requisicao.feito;
     //cell5.innerHTML = requisicao.progresso;
 
@@ -78,25 +82,9 @@ const checkbox = document.querySelector("#checkbox")
   }
 */
 
-// Função para atualizar a lista de requisições na tabela da interface após o filtro
-function atualizarListaRequisicoesFiltrada(listaFiltrada) {
-  const tabelaRequisicoes = document.getElementById('tabelaRequisicoes');
-  tabelaRequisicoes.innerHTML = ''; // Limpa a tabela atual
 
-  listaFiltrada.forEach(requisicao => {
-    const row = tabelaRequisicoes.insertRow();
-    const cell1 = row.insertCell(0);
-    const cell2 = row.insertCell(1);
-    const cell3 = row.insertCell(2);
-    const cell4 = row.insertCell(3);
-    const cell5 = row.insertCell(4);
-    cell1.innerHTML = requisicao.disciplina;
-    cell2.innerHTML = requisicao.descricao;
-    cell3.innerHTML = requisicao.dataDeConclusao;
-    cell4.innerHTML = '<input type="checkbox" >';
-    cell5.innerHTML = requisicao.progresso;
-  });
-}
+
+
 
     // Inicializa a lista de requisições na tabela da interface
     atualizarListaRequisicoes();
