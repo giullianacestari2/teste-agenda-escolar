@@ -26,6 +26,15 @@ function buscarListaLocalStorage() {
   return transformandoDeStringParaListagem
 
 }
+// Função para formatar a data no formato "dd/mm/aa"
+function formatarData(data) {
+  const dataObj = new Date(data);
+  const dia = dataObj.getDate().toString().padStart(2, '0');
+  const mes = (dataObj.getMonth() + 1).toString().padStart(2, '0'); // Note que janeiro é 0, então adicionamos 1
+  const ano = dataObj.getFullYear().toString().slice(-2); // Pegue os últimos dois dígitos do ano
+  return `${dia}/${mes}/${ano}`;
+}
+
 
 // Função para atualizar a lista de requisições na tabela da interface
 function atualizarListaRequisicoes() {
@@ -56,7 +65,7 @@ function atualizarListaRequisicoes() {
 
     cell1.innerHTML = requisicao.disciplina;
     cell2.innerHTML = requisicao.descricao;
-    cell3.innerHTML = requisicao.dataDeConclusao;
+    cell3.innerHTML = formatarData(requisicao.dataDeConclusao);
 
     // CRIANDO CHECKBOX utilizando o createElement
     // para criar um elemento input e dando o tipo checkbox
@@ -149,3 +158,4 @@ function atualizarListaRequisicoesFiltrada(listaFiltrada) {
 
     // Inicializa a lista de requisições na tabela da interface
     atualizarListaRequisicoes();
+
