@@ -35,5 +35,4 @@ function adicionarRequisicao() {
   // Salva os dados no Local Storage
   salvarDadosNoLocalStorage();
 
-  console.table(listaJSON); // Exibe a lista JSON atualizada no console
   }
