@@ -1,3 +1,8 @@
+let btnAdicionar = document.querySelector("#adicionar-licao")
+
+btnAdicionar.addEventListener("click", adicionarRequisicao)
+
+
 // Função para adicionar uma nova requisição à lista
 function adicionarRequisicao() {
     const disciplinaInput = document.getElementById('disciplina');

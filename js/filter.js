@@ -1,3 +1,7 @@
+let btnFiltrar = document.querySelector("#filtroBotao")
+
+btnFiltrar.addEventListener("click", toggleFiltroMenu)
+
 // Função para alternar a exibição do menu suspenso de filtro
 function toggleFiltroMenu() {
     const filtroMenu = document.getElementById('filtroMenu');

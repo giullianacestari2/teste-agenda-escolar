@@ -31,39 +31,37 @@
           <option value="portugues">Português</option>
           <option value="quimica">Química</option>
         </select>
-        <br>
-      </div>
 
+      </div>
       <div class="grupo">
         <label for="descricao">Tarefa:</label>
-        <textarea id="descricao" required></textarea>
+        <input id="descricao" name="tarefa" type="text" placeholder="digite sua tarefa" class="campo campo-medio" required>
         <br>
       </div>
-
       <div class="grupo">
         <label for="dataDeConclusao">Prazo:</label>
-        <input type="date" id="dataDeConclusao" required>
+        <input type="date" id="dataDeConclusao" class="campo campo-medio" required>
       </div>
 
-      <button type="button" onclick="adicionarRequisicao()">Enviar</button>
+      <button type="button" id="adicionar-licao" class="botao adicionar">Enviar</button>
       </form>
   </section>
 
   
 
   <h2>Filtrar por Disciplina</h2>
-  <button type="button" id="filtroBotao" onclick="toggleFiltroMenu()">FILTRAR</button>
-  <select id="filtroMenu" onchange="filtrarRequisicoes()">
+  <button type="button" id="filtroBotao" >FILTRAR</button>
+  <select id="filtroMenu" class="filtroMenu" onchange="filtrarRequisicoes()"> 
     <option value="todas">Todas</option>
     <option value="matematica">Matemática</option>
     <option value="portugues">Português</option>
     <option value="quimica">Química</option>
   </select>
 
-  <button type="button" id="totalBotao" onclick="exibirTotal()">TOTAL</button>
+  <button type="button" id="totalBotao">TOTAL</button>
   <p id="totalResultado" style="display:none">Você tem um total de  <span id="totalValor"></span> tarefas para fazer</p>
 
-  <button type="button" onclick="ordenarPorData()">ORDENAR</button>
+  <button type="button" id="ordenarBotao" onclick="ordenarPorData()">ORDENAR</button>
   <table>
     <thead>
       <tr>

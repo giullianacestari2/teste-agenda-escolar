@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+:root{
+    --fonte-titulo: Cambria;
+    --fonte-tabela: 'Inter', sans-serif;
+    --amarelo: #FAC900;
+    --roxo:#C75EEB;
+    --verde:#61E061;
+    --azul:#4EBFE9;
+    --vermelho: #F6543B;
+    --cinza-claro:#fafafa;
+}
+
+.filtroMenu{
+    display: none;
+}
