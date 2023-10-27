@@ -7,10 +7,7 @@ function carregarDadosDoLocalStorage() {
     }
   }
 
-  // Função para salvar os dados da lista no Local Storage
-  function salvarDadosNoLocalStorage() {
-    localStorage.setItem('listaJSON', JSON.stringify(listaJSON));
-  }
+
 // Removido variavel let listaJSON = []; ja tinha sido instanciado outras vezes
 
 // Estas funcoes estao na pagina forEach,
