@@ -1,16 +1,22 @@
-
+// Função para carregar os dados da lista a partir do Local Storage
 function carregarDadosDoLocalStorage() {
-    const dadosLocalStorage = localStorage.getItem('listaJSON');
-    if (dadosLocalStorage) {
-      listaJSON = JSON.parse(dadosLocalStorage);
-      atualizarListaRequisicoes();
-    }
+  const dadosLocalStorage = localStorage.getItem('listaJSON');
+  if (dadosLocalStorage) {
+    listaJSON = JSON.parse(dadosLocalStorage);
+    atualizarListaRequisicoes();
   }
+}
 
-  // Função para salvar os dados da lista no Local Storage
+// Função para salvar os dados da lista no Local Storage
+function salvarDadosNoLocalStorage() {
+  localStorage.setItem('listaJSON', JSON.stringify(listaJSON));
+}
 
-// Removido variavel let listaJSON = []; ja tinha sido instanciado outras vezes
+// Lista JSON existente
+let listaJSON = [];
 
-// Estas funcoes estao na pagina forEach,
-// depois voce organiza o código da maneira que achar melhor
-// removido   carregarDadosDoLocalStorage();
+// Carregar dados do Local Storage, se existirem
+carregarDadosDoLocalStorage();
+
+// Inicializa a lista de requisições na tabela da interface
+atualizarListaRequisicoes();
