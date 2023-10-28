@@ -122,6 +122,7 @@ form {
 table {
     width: 80%;
     font-size: 30px;
+    height: 30px;
 }
 
 th {
@@ -131,6 +132,12 @@ th {
     padding: 8px;
     border: 1px solid #dddddd88;
     border-radius: 20px;
+}
+
+.campo-invisivel{
+    width: 80px;
+    background-color: #43434300;
+    border: none;
 }
 
 td {
@@ -148,8 +155,47 @@ td {
     flex-direction: row;
 }
 
+.estilo-td-checkbox {
+    text-align: center;
+}
+
+/* PROGRESSO */
+.progresso{
+    font-weight: 700;
+    
+}
+
+.atrasado {
+    color: var(--vermelho);
+    
+}
+
+.aFazer {
+    color: var(--azul);
+}
+
+.finalizado {
+    color: var(--verde);
+}
 
 /* BOTOES */
+
+button{
+    padding: 8px;
+    border: 1px solid #ddddddb9;
+    border-radius: 20px;
+    font-family: var(--fonte-tabela);
+    color: #464646;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: #f6543b9b;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
 
 .botoes{
     align-items: flex-start;
@@ -187,6 +233,18 @@ td {
     font-weight: 500;
 }
 
+button::before, button::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    transition: 1s ease;
+} 
+
 .botao::before, .botao::after {
     content: '';
     display: block;
@@ -212,11 +270,15 @@ td {
 }
 
 .botao.ordenar{
-    background: #f6543b9b;
+    background: #fac800a7;
 }
 
 .botao.total{
-    background: #c85eeba2;
+    background: #c85eebb1;
+}
+
+button::before, button::after {
+    background-color: var(--vermelho)
 }
 
 .botao.adicionar::before, .botao.adicionar::after {
@@ -228,12 +290,23 @@ td {
 }
 
 .botao.ordenar::before, .botao.ordenar::after{
-    background-color: var(--vermelho);
+    background-color: var(--amarelo);
 }
 
 .botao.total::before, .botao.total::after {
     background-color: var(--roxo);
 }
+
+button::before{
+    top: -1em;
+    left: -1em;
+}
+
+button::after{
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+}
+
 .botao::before {
     top: -1em;
     left: -1em;
@@ -244,17 +317,52 @@ td {
     top: calc(100% + 1em);
 }
 
+button:hover::before, button:hover::after {
+    height: 410px;
+    width: 410px;
+}
+
 .botao:hover::before, .botao:hover::after {
     height: 410px;
     width: 410px;
 }
 
+button:hover {
+    color: rgb(255, 255, 255);
+}
+
 .botao:hover {
     color: rgb(255, 255, 255);
 }
+
+button:active {
+    filter: brightness(.8);
+} 
    
 .botao:active {
     filter: brightness(.8);
 }   
 
 
+
+input[type="checkbox"]::before {
+    content: '\2714'; /* Símbolo de marca de seleção ✔ */
+    display: inline-block;
+    width: 20px; /* Altere o tamanho do marcador */
+    height: 20px; /* Altere o tamanho do marcador */
+    text-align: center;
+    line-height: 20px; /* Centralize verticalmente */
+    color: #fff; /* Cor do símbolo de marca de seleção */
+}
+  input[type="checkbox"]:checked::before {
+    content: '\2713'; /* Símbolo de marca de seleção ✔ quando marcado */
+    background-color: #2ecc71; /* Cor do marcador quando marcado */
+  }
+  
+
+  input[type="checkbox"] {
+    width: 20px; /* Largura da caixa do checkbox */
+    height: 20px; /* Altura da caixa do checkbox */
+    border: 1px solid #ccc; /* Estilo da borda da caixa */
+  }
+  

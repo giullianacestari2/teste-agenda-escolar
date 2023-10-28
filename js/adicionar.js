@@ -32,7 +32,6 @@ function adicionarRequisicao() {
   // Atualiza a lista de requisições na tabela da interface
   atualizarListaRequisicoes();
 
-  // Salva os dados no Local Storage
-  salvarDadosNoLocalStorage();
+
 
   }
