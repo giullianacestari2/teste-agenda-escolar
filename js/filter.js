@@ -49,7 +49,7 @@ function toggleFiltroMenu() {
       // Adicione a classe "estilo-checkbox" ao elemento checkbox
       checkbox.classList.add('estilo-checkbox');
 
-      //usamos o appendChield para inserir um elemento dentro de uma celula da tabela
+      //usamos o appendChild para inserir um elemento dentro de uma celula da tabela
       cell4.appendChild(checkbox);
 
       // Definindo o estado do checkbox com base no valor "feito" true ou false que ja veio da lista
@@ -65,6 +65,8 @@ function toggleFiltroMenu() {
         atualizarListaAlteradaNoLocalStorage(listaJSON);
         // buscando os dados da lista novamente para atualizar em "tempo real"
         atualizarListaRequisicoes();
+
+      
       });
 
       // Adicionado botão "Remover" em cada linha da mesma maneira do checkbox
@@ -90,5 +92,5 @@ function toggleFiltroMenu() {
   }
 
   // Inicializa a lista de requisições na tabela da interface
-atualizarListaRequisicoes();
+//atualizarListaRequisicoes();
   
