@@ -42,7 +42,7 @@ function buscarListaLocalStorage() {
 function atualizarListaRequisicoes() {
 
 
-    // Pode criar uma verificacao de quando for ordenacao
+  // Pode criar uma verificacao de quando for ordenacao
 
   //listaJSON = buscarListaLocalStorage();
 
@@ -89,7 +89,7 @@ function atualizarListaRequisicoes() {
       atualizarListaAlteradaNoLocalStorage(listaJSON);
       // buscando os dados da lista novamente para atualizar em "tempo real"
       atualizarListaRequisicoes();
-      });
+    });
 
 
     // Coluna "Progresso"
@@ -140,6 +140,7 @@ function atualizarListaRequisicoes() {
   });
 }
 
+
 function atualizarListaAlteradaNoLocalStorage(listagemAlterada){
   //Transformamos toda a lista de objeto em UMA STRING utilizando o stringify
   let listaTransformada=JSON.stringify(listagemAlterada)
@@ -156,3 +157,4 @@ function atualizarListaAlteradaNoLocalStorage(listagemAlterada){
 
 // Inicializa a lista de requisições na tabela da interface
 atualizarListaRequisicoes();
+
