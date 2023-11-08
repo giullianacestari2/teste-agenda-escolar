@@ -3,7 +3,7 @@ let listaJSON = [];
 
 // Função para formatar a data no formato "dd/mm/aa"
 function formatarData(data) {
-  const dataObj = new Date(data);
+  const dataObj = new Date(data + 'T00:00:00');
   const dia = dataObj.getDate().toString().padStart(2, '0');
   const mes = (dataObj.getMonth() + 1).toString().padStart(2, '0'); // Note que janeiro é 0, então adicionamos 1
   const ano = dataObj.getFullYear().toString().slice(-2); // Pegue os últimos dois dígitos do ano
